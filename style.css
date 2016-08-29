@@ -1,0 +1,38 @@
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    min-height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+}
+aside {
+    border: 1px solid #8b0000;
+    flex: 1 250px;
+}
+header {
+    flex: 1;
+    border: 1px solid #8b0000;
+}
+section {
+    flex: 4;
+    border: 1px solid #8b0000;
+}
+footer {
+    flex: 1;
+    border: 1px solid #8b0000;
+}
+.main-container {
+    display: flex;
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+}
+.inner-container {
+    display: flex;
+    flex-flow: column wrap;
+    width: calc(100% - 250px);
+}
