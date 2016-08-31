@@ -1,51 +1,54 @@
+/* gonna refactoring all many times anyway ;) */
+
 html {
     height: 100%;
     box-sizing: border-box;
 }
-body {
+.main-wrapper {
     margin: 0;
-    min-height: 100%;
     display: flex;
-    flex-flow: row wrap;
-    text-align: center;
 }
-.left-wrapper,
-.right-wrapper__header,
-.right-wrapper__section,
-.right-wrapper__footer {
+.wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: column wrap;
+  text-align: center;
+  max-width: 900px;
+  width: 100%;
+  margin: 1% auto 0;
+}
+.wrapper__section {
+  display: flex;
+  flex: 1;
+}
+.wrapper__header {
+  border: 1px solid #8b0000;
+  max-height: 50px;
+  flex: 1;
+}
+.wrapper__footer {
+  border: 1px solid #8b0000;
+  max-height: 50px;
+  flex: 1;
+}
+.article {
+  border: 1px solid #8b0000;
+}
+.article__header {
+  margin: 0;
+  padding: 10px;
+  color: #8b0000;
+}
+.section__aside {
+  display: flex;
+  flex: 1;
   align-items: center;
   justify-content: center;
-}
-.left-wrapper__navbar, .right-wrapper__content {
-  max-width: 50%;
-}
-.left-wrapper {
-    border: 1px solid #8b0000;
-    flex: 1 250px;
-}
-.right-wrapper__header {
-    flex: 1;
-    border: 1px solid #8b0000;
-}
-.right-wrapper__section {
-    flex: 4;
-    border: 1px solid #8b0000;
-}
-.right-wrapper__footer {
-    flex: 1;
-    border: 1px solid #8b0000;
-}
-.main-wrapper {
-    display: flex;
-    max-width: 900px;
-    width: 100%;
-    margin: 1% auto;
-}
-.right-wrapper {
-    display: flex;
-    flex-flow: column wrap;
-    width: calc(100% - 250px);
+  border-left: 3px solid #8b0000;
 }
 .navbar-list {
   padding: 0;
@@ -61,4 +64,24 @@ body {
 }
 .navbar-list__link:hover {
   text-decoration: underline;
+}
+@media all and (min-width: 600px) {
+  .wrapper__section {
+    flex-direction: column;
+  }
+  .article {
+    flex: 4;
+    order: 2;
+  }
+}
+@media all and (min-width: 800px) {
+  .article {
+    flex: 4;
+  }
+  .section__aside {
+    order: 2;
+  }
+  .wrapper__section {
+      flex-direction: row;
+  }
 }
