@@ -6,7 +6,7 @@
 
 html {
   height: 100%;
-  color: #404040;
+  color: #1e1b1d;
   font: 400 1em/1.4 'Open Sans',sans-serif;
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -34,10 +34,10 @@ html {
 }
 .header {
   padding: 1.5em;
-  background-color: hsla(30,15%,50%,.1);
+  background-color: #212a34;
   text-align: center;
 }
-.header-search {
+.header__search {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -52,8 +52,11 @@ html {
   -ms-flex-direction: column;
   flex-direction: column;
   font-size: .9em;
+  position:relative;
+  padding:0;
+  margin:0;
 }
-.header-greeting {
+.header__greeting {
   margin: 0 0 1.5em;
   font-size: .8em;
   font-weight: 300;
@@ -140,6 +143,23 @@ html {
   line-height: 1;
   margin: .25em 0 .75em;
 }
+.search__image {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+.search__field {
+  border: 1px solid hsla(30,15%,50%,.25);
+  padding: .5em .75em;
+  padding-right: 30px;
+  outline: none;
+}
+.search__field:not(:first-child) {
+  border-left: 0;
+}
+.search__field:last-child {
+  border-radius: 0 2px 2px 0;
+}
 @media all and (min-width: 768px) {
   .header {
     padding: 1.5em;
@@ -150,7 +170,7 @@ html {
   }
 }
 @media all and (min-width: 768px) {
-  .header, .header-title {
+  .header, .header__title {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -158,7 +178,7 @@ html {
   }
 }
 @media all and (min-width: 768px) {
-  .header-title {
+  .header__title {
     -webkit-box-align: baseline;
     -webkit-align-items: baseline;
     -ms-flex-align: baseline;
@@ -166,7 +186,7 @@ html {
   }
 }
 @media all and (min-width: 384px) {
-  .header-search {
+  .header__search {
     -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
@@ -183,7 +203,7 @@ html {
   }
 }
 @media all and (min-width: 768px) {
-  .header-search {
+  .header__search {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
@@ -196,11 +216,20 @@ html {
   }
 }
 @media all and (min-width: 768px) {
-  .header-greeting {
+  .header__label {
+    font-weight: 200;
+    letter-spacing: -.095em;
+    font-size: 1.5em;
+    color: #b59b4a;
+  }
+}
+@media all and (min-width: 768px) {
+  .header__greeting {
     margin: 0 0 0 2em;
-    font-size: .8em;
+    font-size: 1.7em;
     font-weight: 300;
-    color: #999999;
+    color: #fff0f5;
+    font-family: 'Italianno', cursive;
   }
 }
 @media all and (min-width: 768px) {
