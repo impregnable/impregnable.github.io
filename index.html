@@ -1,10 +1,13 @@
-<html>
+<html ng-app='myPrivateBlog' lang='en'>
 <head>
   <title>myPrivateBlog</title>
   <meta charset='utf-8'>
-  <link rel='stylesheet' href='style.css'>
+  <link rel='stylesheet' href='css/style.css'>
   <link href='https://fonts.googleapis.com/css?family=Italianno' rel='stylesheet'>
-  <link href='https://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet'>
+  <script src='bower_components/jquery/dist/jquery.min.js'></script>
+  <script src='bower_components/angular/angular.min.js'></script>
+  <script src='bower_components/angular-ui-router/release/angular-ui-router.min.js'></script>
+  <script src='js/app.js'></script>
 </head>
 <body class='main-wrapper'>
   <!-- of course soon I'm gonna encapsulate header, content, nav and footer as well -->
@@ -16,20 +19,19 @@
       </div>
       <div class='header__search'>
         <input class='search__field'>
-        <img src='/search.svg' class='search__image'>
+        <img src='img/search.svg' class='search__image'>
       </div>
     </div>
   </header>
   <main class='main-wrapper__content'>
-    <article class='content-article'>
-      <h1 class='article-header'>Nice to see ya, it's been a while :D</h1>
-      <div>
-        So... Всем доброго времени суток ;) Меня зовут Артём и я программист :D
-      </div>
+    <article class='content__article'>
+      <div ui-view='content'></div>
     </article>
-    <nav class='content-navbar'>
+    <nav class='content__navbar'>
       <ul class='navbar-list'>
-        <li class='navbar-list__item'><a href='' class='navbar-list__link'>home</a></li>
+        <li class='navbar-list__item'>
+          <a ui-sref='home' ng-class="{active: $state.includes('home')}" class='navbar-list__link'>home</a>
+        </li>
         <li class='navbar-list__item'><a href='' class='navbar-list__link'>smart stuff</a></li>
         <li class='navbar-list__item'><a href='' class='navbar-list__link'>hilarious stuff</a></li>
         <li class='navbar-list__item'><a href='' class='navbar-list__link'>some other stuff</a></li>
