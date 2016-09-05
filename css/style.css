@@ -49,9 +49,14 @@
 }
 .header__greeting {
   margin: 0 0 1.5em;
-  font-size: .8em;
-  font-weight: 300;
+  font-size: 1.3em;
+  font-weight: 200;
   white-space: nowrap;
+  color: #fff0f5;
+  font-family: 'Italianno', cursive;
+}
+.header__label {
+  color: #b59b4a;
 }
 .main-wrapper__content {
   display: -webkit-box;
@@ -107,6 +112,7 @@
   display: block;
   text-indent: 30px;
   color: #999999;
+  cursor: pointer;
   text-transform: uppercase;
   text-decoration: none;
   font-size: 12px;
@@ -214,7 +220,6 @@
     font-weight: 200;
     letter-spacing: -.095em;
     font-size: 1.5em;
-    color: #b59b4a;
   }
 }
 @media all and (min-width: 768px) {
@@ -222,8 +227,6 @@
     margin: 0 0 0 2em;
     font-size: 1.7em;
     font-weight: 300;
-    color: #fff0f5;
-    font-family: 'Italianno', cursive;
   }
 }
 @media all and (min-width: 768px) {

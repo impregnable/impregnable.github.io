@@ -32,8 +32,12 @@
         <li class='navbar-list__item'>
           <a ui-sref='home' ng-class="{active: $state.includes('home')}" class='navbar-list__link'>home</a>
         </li>
-        <li class='navbar-list__item'><a href='' class='navbar-list__link'>smart stuff</a></li>
-        <li class='navbar-list__item'><a href='' class='navbar-list__link'>hilarious stuff</a></li>
+        <li class='navbar-list__item'>
+          <a ui-sref='smartStuff' ng-class="{active: $state.includes('smartStuff')}" class='navbar-list__link'>smart stuff</a>
+        </li>
+        <li class='navbar-list__item'>
+          <a ui-sref='hilariousStuff' ng-class="{active: $state.includes('hilariousStuff')}" class='navbar-list__link'>hilarious stuff</a>
+        </li>
         <li class='navbar-list__item'><a href='' class='navbar-list__link'>some other stuff</a></li>
         <li class='navbar-list__item'><a href='' class='navbar-list__link'>about me page, yeah :D</a></li>
       </ul>
