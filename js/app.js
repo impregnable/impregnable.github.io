@@ -1,6 +1,7 @@
 var blog = angular.module('myPrivateBlog', ['ui.router']);
 
-blog.config(function($stateProvider, $urlRouterProvider) {
+blog.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+  $locationProvider.html5Mode(true);
   $urlRouterProvider.otherwise('/home');
   $stateProvider
     .state('home', {
