@@ -2,20 +2,21 @@
 <head>
   <title>myPrivateBlog</title>
   <meta charset='utf-8'>
-  <base href='/'/>
   <link rel='stylesheet' href='css/style.css'>
   <link href='https://fonts.googleapis.com/css?family=Italianno' rel='stylesheet'>
   <script src='bower_components/jquery/dist/jquery.min.js'></script>
   <script src='bower_components/angular/angular.min.js'></script>
   <script src='bower_components/angular-ui-router/release/angular-ui-router.min.js'></script>
   <script src='js/app.js'></script>
+  <script src='js/services.js'></script>
+  <script src='js/controllers.js'></script>
 </head>
 <body class='main-wrapper'>
   <!-- of course soon I'm gonna encapsulate header, content, nav and footer as well -->
   <header class='main-wrapper__header'>
     <div class='header'>
       <div class='header__title'>
-        <div class='header__label'>impregnablefiend</div>
+        <div class='header__label' ui-sref='home' style='cursor:pointer'>impregnablefiend</div>
         <div class='header__greeting'>Good news travels slowly, bad news has wings.</div>
       </div>
       <div class='header__search'>
@@ -47,7 +48,7 @@
   <footer class='main-wrapper__footer'>
     <div class='footer'>
       <div class='footer-someStuff'>some stuff here, e.g. my vk/git/mail/whatever </div>
-      <div class='footer-anotherStuff'>another stuff, like... dunno right now, but I'll invent something :D</div>
+      <div class='footer-anotherStuff'>another fascinating stuff, like... dunno right now, but I'll invent something :D</div>
     </div>
   </footer>
 </body>

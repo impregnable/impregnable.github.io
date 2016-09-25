@@ -1,5 +1,39 @@
 /* gonna refactoring all many times anyway ;) */
 
+.single-post-wrapper {
+    width: 100%;
+    border: 1px solid #eee;
+    margin-bottom: 32px;
+}
+.single-post {
+  padding: 8px 32px;
+  color: #212a34;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.single-post__info{
+    display: flex;
+    justify-content: space-between;
+}
+.single-post__header {
+  font-weight: 200;
+  font-size: 1.5em;
+  letter-spacing: -.075em;
+  line-height: 1;
+  margin: .25em 0 .75em;
+    -o-transition: color 0.25s ease-in;
+    -webkit-transition: color 0.25s ease-in;
+    -moz-transition: color 0.25s ease-in;
+    transition: color 0.25s ease-in;
+}
+.single-post-wrapper:hover .single-post__header {
+    text-decoration: underline;
+    color: #b59b4a;
+}
+.single-post__link {
+    text-decoration: none;
+    cursor: pointer;
+}
 *, :after, :before {
   box-sizing: border-box;
 }
@@ -117,13 +151,13 @@
   text-decoration: none;
   font-size: 12px;
   letter-spacing: 2px;
+    -o-transition: color 0.25s ease-in;
+    -webkit-transition: color 0.25s ease-in;
+    -moz-transition: color 0.25s ease-in;
+    transition: color 0.25s ease-in;
 }
 .navbar-list__link:hover, .active {
   color: #1e1b1d;
-  -o-transition: color 0.25s ease-in;
-  -webkit-transition: color 0.25s ease-in;
-  -moz-transition: color 0.25s ease-in;
-  transition: color 0.25s ease-in;
 }
 .footer {
   padding: 24px;
@@ -159,8 +193,20 @@
   border-radius: 0 2px 2px 0;
 }
 .article__prelude {
-  font-family: Georgia,Times,Times New Roman,serif;
+    font-family: Georgia,Times,Times New Roman,serif;
+    margin: .25em 0 .75em;
 }
+/*.article__header:first-letter {*/
+  /*font-family: "Times New Roman", Times, serif;
+  /*font-size: 150%; */
+  /*color: #b59b4a;*/
+/*}*/
+/*a {*/
+    /*border-bottom: 1px dashed rgba(70,185,128,.5);*/
+    /*color: #46b980;*/
+    /*text-decoration: none;*/
+    /*cursor: pointer;*/
+/*}*/
 @media all and (min-width: 768px) {
   .header {
     padding: 1.5em;
