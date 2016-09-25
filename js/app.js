@@ -1,7 +1,6 @@
-var blog = angular.module('myPrivateBlog', ['ui.router']);
+var blog = angular.module('myPrivateBlog', ['ui.router', 'postsControllers','postsServices']);
 
-blog.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
-  $locationProvider.html5Mode(true);
+blog.config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/home');
   $stateProvider
     .state('home', {
@@ -16,7 +15,19 @@ blog.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/smartStuff',
       views: {
         'content': {
-          templateUrl: 'html/smartStuff.html'
+          templateUrl: 'html/smartStuff.html',
+          controller: 'SmartStuffController'
+        }
+      }
+    })
+    .state('postsAboutSmartStuff', {
+      url: '/smartStuff/{smartStuffPostId}',
+      views: {
+        'content': {
+          templateUrl: 'html/post.html',
+          controller: function($scope, $stateParams) {
+             $scope.smartStuffPostId = $stateParams.smartStuffPostId;
+          }
         }
       }
     })
