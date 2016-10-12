@@ -1,0 +1,35 @@
+<h1 class='article__header'>Some real initial stuff</h1>
+<div class='article__prelude'>
+    <p>Well... на протяжении 2 недель я боролся с корректной реализацией постов... боролся unsuccessfully. Проблема с отображением
+    code samples с отступами, подсветкой синтаксиса и прочими мелочами, из-за которых, unfortunately, я не могу толком сдвинуться
+    с места. В данный момент весь post's content лежит в JSON => оттуда я его достаю с помощью angular's service => затем он
+    попадает в angular's controller => и уже там с помощью angular's scope я использую content непосредственно в постах. С текстом,
+    датами, цифрами, чем угодно это срабатывает на ура ибо ничего сложного тут нет. Но code samples...</p>
+    <p>Я не представляю как хранить примеры кода так, чтобы на выходе в постах я получал что-то похожее на code sample. Я хочу
+    добиться подобного результата:</p>
+
+<div hljs include="'compile1'" compile='true' language='javascript'></div>
+<script type="text/ng-template" id="compile1">
+function hasDuplicates(array) {
+    // some comments here
+    for (var i = 0; i < array.length; i++)
+        for (var j = i + 1; j < array.length; j++)
+            if (array[i] == array[j]) return true;
+    return false;
+}
+</script>
+    <p>Естественно, все эти графические преобразования должны происходить автоматически, моя страничка должна получать дефолтным
+    образом некие строки и парсить их в такой вот симпатичный code sample. Данный пример я написал руками, т.е. естественно
+    строчки разукрашены с помощью специальной angular's directive, но сами strings написаны by myself, а не получены и распарсены
+    из JSON. На stackoverflow мне предложили использовать Markdown => я установил => попробовал, но никаких дивидендов он мне не
+    принёс. Maybe I just don't know how to use it right.</p>
+    <p>So... эта страница обещает быть длинной :D By the way, я не верю в чудеса, но если на мой фантастический сайт occasionally
+    попадёт знаток Angular.js и, in particular, размещения примеров кода на страницах сайта... напиши мне
+    <a href='https://vk.com/forestalled' class='article__link'>vk</a> или на <span class='article__link'>impregnablefiend@gmail.com</span> и поделись опытом :)
+    Я знаю - ты существуешь :)</p>
+    <p>Изначально я планировал этот сайт как некий сборник всех моих (незначительных) знаний по программированию, I'm just
+    learning и узнавая что-то новое я постоянно пишу это в тетрадь, на листочек или же храню в закладках. My goal в том, чтобы
+    систематизировать и упорядочить эти знания. Until I dunno how to perform that lovely and correctly => я решил начать
+    писать какие-то базовые вещи здесь, на этом одном превосходном роуте. Anyway, сайт мой - делаю, что хочу :) </p>
+</div>
+<!--<div class='article__subtitle'>A few words about OOP in JS</div>-->
