@@ -1,4 +1,5 @@
-var blog = angular.module('myPrivateBlog', ['ui.router', 'postsControllers','postsServices']);
+var blog = angular.module('myPrivateBlog',
+    ['ui.router', 'postsControllers','postsServices', 'btford.markdown', 'postsDirectives', 'hljs']);
 
 blog.config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/home');
@@ -25,9 +26,7 @@ blog.config(function($stateProvider, $urlRouterProvider) {
       views: {
         'content': {
           templateUrl: 'html/post.html',
-          controller: function($scope, $stateParams) {
-             $scope.smartStuffPostId = $stateParams.smartStuffPostId;
-          }
+          controller: 'SmartStuffController'
         }
       }
     })
@@ -36,6 +35,14 @@ blog.config(function($stateProvider, $urlRouterProvider) {
       views: {
         'content': {
           templateUrl: 'html/hilariousStuff.html'
+        }
+      }
+    })
+    .state('infoPage', {
+      url: '/infoPage',
+      views: {
+        'content': {
+            templateUrl: 'html/infoPage.html'
         }
       }
     });
