@@ -92,6 +92,7 @@
 }
 .header__label {
     color: #b59b4a;
+    font-family: Georgia,Times,Times New Roman,serif;
 }
 .main-wrapper__content {
     display: -webkit-box;
@@ -109,18 +110,6 @@
     flex-direction: column;
     padding: 1.5em 0 1.5em 1.5em;
 }
-/*.main-wrapper__content:after {
-content : '';
-display: block;
-position: absolute;
-top: 0;
-left: 0;
-background-image: url('rain.jpg');
-width: 100%;
-height: 100%;
-opacity : 0.3;
-z-index: -1;
-}*/
 .content__article {
     margin-top: 1.5em;
     font-family: Georgia,Times,Times New Roman,serif;
@@ -177,6 +166,23 @@ z-index: -1;
     line-height: 1;
     margin: .25em 0 .75em;
 }
+.article__subtitle {
+    font-weight: 100;
+    font-size: 1.5em;
+    letter-spacing: -.075em;
+    line-height: 1;
+    margin: .25em 0 .5em;
+}
+.article__link {
+    border-bottom: 1px dashed rgba(70,185,128,.5);
+    color: #46b980;
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+}
+.article__link:hover {
+    border-bottom: 1px solid rgba(70,185,128,1);
+}
 .search__image {
     position: absolute;
     right: 5px;
@@ -198,17 +204,6 @@ z-index: -1;
 .article__prelude {
     margin: .25em 0 .75em;
 }
-/*.article__header:first-letter {*/
-/*font-family: "Times New Roman", Times, serif;
-/*font-size: 150%; */
-/*color: #b59b4a;*/
-/*}*/
-/*a {*/
-/*border-bottom: 1px dashed rgba(70,185,128,.5);*/
-/*color: #46b980;*/
-/*text-decoration: none;*/
-/*cursor: pointer;*/
-/*}*/
 @media all and (min-width: 768px) {
   .header {
     padding: 1.5em;

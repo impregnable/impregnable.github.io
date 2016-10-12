@@ -3,7 +3,17 @@
     "id": 0,
     "theme": "angular.js",
     "title": "Post 1",
-    "description": "Description one"
+    "description": "Description one",
+    "codeSample": [
+      "<span class='aa'>t</span> <p>Hey, I have some awesome content here:</p> ```var t = 'awesome';\u0020alert(t); ```",
+      "\n`function getById(arr, id) {`",
+      "\n`for (var i = 0; i < arr.length; i++) {`",
+      "<br>`if (arr[i].id == id) {`",
+      "<br>`return arr[i];`",
+      "<br>`}`",
+      "<br>`}`",
+      "<br>`}`"
+    ]
   },
   {
     "id": 1,
@@ -28,6 +38,18 @@
     "theme": "wateva",
     "title": "Post {postId}",
     "description": "Description blabla"
+  },
+  {
+    "id": 5,
+    "theme": "wateva2",
+    "title": "Post {postId}",
+    "description": "Description blablabla"
+  },
+  {
+    "id": 6,
+    "theme": "wateva3",
+    "title": "Post {postId}",
+    "description": "Description blablablabla"
   }
 
 ]
