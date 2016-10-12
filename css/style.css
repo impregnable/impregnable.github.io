@@ -89,6 +89,7 @@
     white-space: nowrap;
     color: #fff0f5;
     font-family: 'Italianno', cursive;
+    cursor: pointer;
 }
 .header__label {
     color: #b59b4a;

@@ -24,7 +24,9 @@
     <div class='header'>
       <div class='header__title'>
         <div class='header__label' ui-sref='home' style='cursor:pointer'>impregnablefiend</div>
-        <div class='header__greeting'>Good news travels slowly, bad news has wings.</div>
+        <div class='header__greeting' ng-click='justPlay()'>Good news travels slowly, bad news has wings.
+            <audio src='audio/goodNewsTravelsSlowly.mp3' id='header-greeting__player'></audio>
+        </div>
       </div>
       <div class='header__search'>
         <input class='search__field'>

@@ -47,6 +47,31 @@ blog.config(function($stateProvider, $urlRouterProvider) {
       }
     });
 })
-    .run(function($rootScope, $state) {
+    .run(function($rootScope, $state, $interval) {
       $rootScope.$state = $state;
+
+      var player = document.getElementById('header-greeting__player');
+      var isPlaying = false;
+      $rootScope.justPlay = function() {
+          if (isPlaying) {
+              player.pause();
+          } else {
+              player.play();
+          }
+      };
+      player.onplaying = function() {
+          isPlaying = true;
+      };
+      player.onpause = function() {
+          isPlaying = false;
+      };
+
+      // $interval(function(){ $rootScope.justPlay(); }, 7000000);
+
+      // $interval(call,5000);
+      // var newString = 'new String that will be passed here through service';
+      // function call() {
+      //     $('.header__greeting').html(newString);
+      //     console.log('one');
+      // }
     });
