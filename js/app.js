@@ -47,12 +47,13 @@ blog.config(function($stateProvider, $urlRouterProvider) {
       }
     });
 })
-    .run(function($rootScope, $state, $interval) {
+    .run(function($rootScope, $state, $interval, phrasesFactory) {
       $rootScope.$state = $state;
 
       var player = document.getElementById('header-greeting__player');
       var isPlaying = false;
-      $rootScope.justPlay = function() {
+
+      $rootScope.playResponse = function() {
           if (isPlaying) {
               player.pause();
           } else {
@@ -66,12 +67,36 @@ blog.config(function($stateProvider, $urlRouterProvider) {
           isPlaying = false;
       };
 
-      // $interval(function(){ $rootScope.justPlay(); }, 7000000);
+      // just for fun: list of favourite phrases... still refactoring like all stuff on my blog
+      phrasesFactory.all()
+          .then(function(phrases) {
+              $rootScope.phrases = phrases;
 
-      // $interval(call,5000);
-      // var newString = 'new String that will be passed here through service';
-      // function call() {
-      //     $('.header__greeting').html(newString);
-      //     console.log('one');
-      // }
+              var arrayPhrases = $.map(phrases, function(value) {
+                  return [value];
+              });
+              // initial audio hero's response
+              $rootScope.heroResponse = 'audio/Goodnewstravelsslowlybadnewshaswings.mp3';
+              //
+              function changePhrases() {
+                  var i = 0;
+                  function nextPhrase() {
+                      i = (i + 1) % arrayPhrases.length;
+                      var next = arrayPhrases[i];
+                      $('.header__greeting').html(next);
+                      // yeah, it's fucking ridiculous, but I can't figure out how the hell I can combine it
+                      var nextForAudioName = next.replace(/[^a-zA-Z ]/g,'').replace(/ /g, '');
+                      var heroResponse = 'audio/' + nextForAudioName + '.mp3';
+                      $rootScope.heroResponse = heroResponse;
+                  }
+                  return {
+                      start : function() {
+                          $interval(nextPhrase, 60000)
+                      }
+                  }
+
+              }
+              var go = changePhrases();
+              go.start();
+          })
     });
