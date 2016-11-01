@@ -102,7 +102,7 @@ blog.config(function($stateProvider, $urlRouterProvider) {
                   }
                   return {
                       start : function() {
-                          $interval(nextPhrase, 600000)
+                          $interval(nextPhrase, 60000)
                       }
                   }
               };
