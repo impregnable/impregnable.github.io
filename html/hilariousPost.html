@@ -1,0 +1,17 @@
+<div ng-controller='HilariousStuffController'>
+    <h1 class='article__header'>{{singlePost.header}}</h1>
+    <div class='prelude__few-words-n-song'>
+        <div class='article__self-center'>{{singlePost.prelude}}</div>
+        <div>just <span class='article__link article__link-audio' ng-click='playAudio()'>touch</span> to feel ME when I'd been creating these lines...
+            <audio ng-src='{{singlePost.mood}}' id='audioPlayer'></audio>
+        </div>
+    </div>
+    <p>{{singlePost.cantle1}}</p>
+    <p>{{singlePost.cantle2}}</p>
+    <p>{{singlePost.cantle3}}</p>
+    <p>{{singlePost.cantle4}}</p>
+    <p>{{singlePost.cantle5}}<a href='https://vk.com/id321480839' class='article__link'>друг.</a></p>
+    <p>{{singlePost.cantle6}}<a href='https://vk.com/id2983619' class='article__link'>вот этот загадочный молодой человек :D.</a>{{singlePost.cantle7}}</p>
+    <p>{{singlePost.cantle8}}</p>
+    <p>{{singlePost.cantle9}}</p>
+</div>

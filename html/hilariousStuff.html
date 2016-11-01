@@ -1,5 +1,17 @@
-<h1 class='article__header'>Well, it's funny stuff time :D</h1>
+<h1 class='article__header'>Well, it's funny (no) stuff time :D</h1>
 <div class='article__prelude'>
     Здесь я намереваюсь выкладывать мои обзоры по любимым сериалам/фильмам/играм/whatever, которые сводят меня с ума :D Вообще здесь может быть что угодно - мои мысли в первую очередь :)
 <!-- <img src='img/donotdothat.gif'> Только не надо сразу же делать такие лица :) -->
+</div>
+<div class='single-post-wrapper' ng-repeat='post in posts'>
+    <a ui-sref='postsAboutHilariousStuff({hilariousStuffPostId: {{post.id}}})' class='single-post__link'>
+        <div class='single-post'>
+            <div class='single-post__info'>
+                <div style="color:#999999">{{post.theme}}</div>
+                <div>Date</div>
+            </div>
+            <h3 class='single-post__header'>{{post.title}}</h3>
+            <div>{{post.description}}</div>
+        </div>
+    </a>
 </div>

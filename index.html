@@ -17,6 +17,7 @@
   <script src='js/directives.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js'></script>
   <script src='https://pc035860.github.io/angular-highlightjs/angular-highlightjs.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
 </head>
 <body class='main-wrapper'>
   <!-- of course soon I'm gonna encapsulate header, content, nav and footer as well -->
@@ -27,6 +28,7 @@
         <div class='header__greeting' ng-click='playResponse()'>Good news travels slowly, bad news has wings.
             <audio ng-src='{{heroResponse}}' id='header-greeting__player'></audio>
         </div>
+        <!--<button ng-click="$storage.counter = $storage.counter + 1">{{$storage.counter}}</button>-->
       </div>
       <div class='header__search'>
         <input class='search__field'>
