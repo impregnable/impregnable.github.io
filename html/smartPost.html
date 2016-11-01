@@ -1,0 +1,16 @@
+<h1 class='article__header'>Detail page (single post)</h1>
+<div>Находимся на посте с id = {{smartStuffPostId}}</div>
+<div>theme: {{singlePost.theme}}</div>
+
+<div btf-markdown="bbb"></div>
+<div>{{bbb}}</div>
+<btf-markdown>#Markdown directive *It works!*</btf-markdown>
+
+<div hljs include="'compile-me'" compile="true" language="javascript"></div>
+
+
+<script type="text/ng-template" id="compile-me">
+    function read() {
+        alert('READ');
+    }
+</script>

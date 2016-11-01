@@ -26,5 +26,19 @@ angular.module('postsServices', [])
                 return promise;
             }
         }
+    })
+    .factory('thoughtsFactory', function($http) {
+        var promise;
+        return {
+            all: function() {
+                if(!promise) {
+                    promise = $http.get('thoughts.json')
+                        .then(function(response) {
+                            return response.data;
+                        })
+                }
+                return promise;
+            }
+        }
     });
 
