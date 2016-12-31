@@ -32,7 +32,53 @@ function hasDuplicates(array) {
     систематизировать и упорядочить эти знания. Until I dunno how to perform that lovely and correctly => я решил начать
     писать какие-то базовые вещи здесь, на этом одном превосходном роуте. Anyway, сайт мой - делаю, что хочу :) </p>
 </div>
-<div class='article__subtitle'>A few words about OOP in JS</div>
+<div class='article__subtitle'>A few words about JS' features</div>
 <div>
     <div>Статья в очередной раз 'встала' due to <a ui-sref='postsAboutHilariousStuff({hilariousStuffPostId: 0})' class='article__link'>dat tragic accident.</a></div>
+</div>
+<div class='article__prelude'>
+    <p>Okay, <span class='article__link'>31 декабря 2016 года</span>, я наконец освободился и решил написать пару фраз :D. Насыщенный получился год, я менял жильё, работу, евро, моральные ценности, женщин, побывал на операции, на 'родине', встретился со старыми товарищами, много нового увидел и, к счастью, узнал.
+    Не уверен, что я стал умнее мудрее взрослее или компетентнее, но надеюсь, что да. Однако сейчас не об этом.
+    </p>
+    <p>Пора начинать немного структурировать знания, которые у меня накопились за полтора года программирования, безумно хочется иметь свой 'гугл', куда можно обратиться.
+     So... If you were waiting for the opportune moment, that was it. (цэ Jack S.)
+    </p>
+    <p>На самом деле, момент нихрена не подходящий, я сижу втроём (с джином и тоником) в преддверии НГ и готовлюсь смотреть блистательного Брюса в эпичнейшем фильме Die Hard, но почему-то именно сейчас
+    мне пришло в голову открыть WebStorm и немного попечатать. Выкладывать я буду не рандомные вещи, а то с чем мне уже приходилось сталкиваться, объяснять самые банальные примеры я не буду, ибо не буду.
+    Постараюсь выкладывать что-то на дефолтные темы, но конкретные примеры будут приближенными к реальности.
+    </p>
+    <h4>Vanilla/methods/replace</h4>
+<div hljs include="'compile2'" compile='true' language='javascript'></div>
+<script type="text/ng-template" id="compile2">
+function replaceSomething(yourGorgeousName) {
+    return {
+        name : yourGorgeousName,
+        id : 'xxxxxxxxxx'.replace(
+            /x/g, () => {
+                let randomNumber = Math.random() * 16 | 0;
+                return randomNumber.toString(16);
+            }
+        )
+    }
+}
+console.log(replaceSomething('Артём')); // Object {name: "Артём", id: "97eb79feb2"}
+</script>
+    <p>Функция, в которую ты передаёшь своё имя и которая возвращает тебе объект с двумя парами key -> value, в первой собственно то самое имя (вау, вот это код!),
+    во второй рандомный айдишник. Буковки 'x' заменяются на рандомные значения из шестнадцатеричной системы счисления. That's it.
+    </p>
+    <h4>#es6 #map #join #Object.keys</h4>
+<div hljs include="'compile3'" compile='true' language='javascript'></div>
+<script type="text/ng-template" id="compile3">
+let obj = {drink: 'gin', brand: 'beefeater'};
+
+let result = Object.keys(obj)
+    .map(key => key + '=' + (obj[key]))
+    .join('&');
+
+console.log(result); // drink=gin&brand=beefeater
+</script>
+    <p>На простом примере преобразования object -> query string показываю сразу несколько фич. Object.keys берёт объект и делает из него массив ключей этого объекта.
+    Затем метод map трансформирует этот массив (создаёт новый!), между ключами и значениями ставится знак равенства (in my case).
+    И наконец метод join берет этот новый массив и преобразует его в строку, между элементами ставится амперсанд. Here you go.
+    </p>
 </div>
