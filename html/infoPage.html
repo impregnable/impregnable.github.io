@@ -257,10 +257,31 @@ let array = ['some', 'strings', 7];
 typeof (typeof array);
 </script>
     <p>Правильный и подробный ответ возвращает (или отправляет, idk) нас к истокам изучения JS. Какие существуют типы данных и сколько их в JavaScript? Очевидно, что шесть, и такого типа как массив в JS нет, так что в правой части выражения нам вернётся "object". А typeof "object" разумеется вернёт "string". Если же не вдаваться в детали, то ответ 'операнд typeof всегда возвращает строку, которая содержит тип операнда' будет вполне приемлем.</p>
-    <!--<p>А теперь миниатюрный пример о том, что же такое это волшебное слово callback.</p>-->
-    <!--<h4>#callback #vanilla #uCan'tCallUrselfProgrammerIfUDoNotEvenKnowThat</h4>-->
-    <!--<div hljs include="'compile15'" compile='true' language='javascript'></div>-->
-<!--<script type="text/ng-template" id="compile15">-->
+    <p>Right... а теперь вернёмся к нашим, гм, колбэкам. <span class='article__link'>Ночь с 6 на 7 февраля подкралась незаметно</span> - Артём снова тут :)</p>
+    <h4>#callback #vanilla #uCan'tCallUrselfProgrammerIfUDoNotEvenKnowThat</h4>
+    <p>Callback - так разработчики именуют любую функцию, которая передана в другую функцию в качестве аргумента. Simple concept, wright? Главный вопрос - для чего нужен callback и в каких ситуациях стоит его использовать? Есть несколько причин. Понимаю я все (so-so), но right now толковым примером смогу объяснить только одну. Вот он:</p>
+    <div hljs include="'compile15'" compile='true' language='javascript'></div>
+<script type="text/ng-template" id="compile15">
+// пишем одну(!) функцию, которая принимает массив чисел и callback, который пока неизвестен
+function base(array, cb) {
+    var newArray = [];
+    for (var i = 0; i < array.length; i++) {
+        newArray[i] = cb(array[i]);
+    }
+    return newArray;
+}
 
-<!--</script>-->
+// массив чисел над которым будут проводиться операции, в этом примере я его задал сам
+// числа могут вводиться пользователем (если вы пишите, например, калькулятор)
+var array = [1,3,5,10];
+
+// а вот и непосредственно сами операции (возведение в квадрат, куб, wateva...)
+var doSquare = base(array, (x) => x * x);
+var doCube = base(array, (x) => x * x * x);
+// операции по-хорошему надо выносить в отдельные функции (инкапсулировать), но здесь это необязательно :)
+
+console.log(doSquare); // [1, 9, 25, 100]
+console.log(doCube);   // [1, 27, 125, 1000]
+</script>
+    <p>По-моему, комментарии тут излишни. Завтра попытаюсь написать внятный пример cb на тему асинхронности (собственно главную тему cb).</p>
 </div>
