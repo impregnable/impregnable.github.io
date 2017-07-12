@@ -3,7 +3,6 @@ postsControllers.controller('SmartStuffController', function($scope, postsFactor
     postsFactory.all()
         .then(function(posts) {
             $scope.posts = posts;
-            console.log($scope.posts,'posts');
             $scope.smartStuffPostId = $stateParams.smartStuffPostId;
 
             function getById(arr, id) {
@@ -14,16 +13,12 @@ postsControllers.controller('SmartStuffController', function($scope, postsFactor
                 }
             }
             $scope.singlePost = getById($scope.posts, $stateParams.smartStuffPostId);
-            // console.log($scope.posts[0].codeSample);
-            // $scope.bbb = $scope.posts[0].codeSample.join('\n');
-            // console.log($scope.bbb);
         });
 });
 postsControllers.controller('HilariousStuffController', function($scope, thoughtsFactory, $stateParams) {
     thoughtsFactory.all()
         .then(function(posts) {
             $scope.posts = posts;
-            console.log($scope.posts,'thoughts');
             $scope.hilariousStuffPostId = $stateParams.hilariousStuffPostId;
 
             function getById(arr, id) {

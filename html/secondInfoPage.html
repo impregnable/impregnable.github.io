@@ -1,0 +1,34 @@
+<h1 class='article__header'>Well well well...</h1>
+<div class='article__prelude'>
+    <p>Right, <span class='article__link'>06/07/2017</span> я устроился на свою уже третью работу в СПб - ребята переписывают огромный проект с 1 ангуляра на 4. Серьёзная проверка для меня, молодого и неопытного в больших красивых проектах. Итак, здесь буду писать вкратце, а иногда и подробно, знания каких вещей мне понадобились/понадобятся. Что-то я знал, что-то не знал, что-то забыл... anyway, let's get it started.</p>
+</div>
+<div class='article__subtitle'>Some significant words in AngularJS</div>
+<div class='article__prelude'>
+    <p>$rootScope - it's just a scope, that has every single app, all other scopes are descendant of it.</p>
+    <p>$inject - this is one of three ways of annotating code with some name info, like:</p>
+<div hljs include="'compile1'" compile='true' language='javascript'></div>
+<script type="text/ng-template" id="compile1">
+MyCtrl.$inject = ['$scope', 'wateva'];
+</script>
+    <p>It's called $inject property annotation. We need to annotate functions so that the injector knows what services to inject into the function.</p>
+    <p>$q - well, it's an object in AngularJS that works with promises. In particular, $q.all is used for concurrent function's implementations. For a example:</p>
+<div hljs include="'compile2'" compile='true' language='javascript'></div>
+<script type="text/ng-template" id="compile2">
+$q.all([loadOne(), loadTwo()]).then(function(res) {
+    doSomethingWithBoth(res[0], res[1]);
+});
+</script>
+    <p>$stateParams - this is an object (in ui-router) that have one key per url parameter. That obj only contain the params that were registered with that state. But we can use a resolve statement in the parent route to avoid that thing. I mean in 'resolve' we can return some certain stateParams and use it in other states, like this:</p>
+<div hljs include="'compile3'" compile='true' language='javascript'></div>
+<script type="text/ng-template" id="compile3">
+resolve: {
+    someId: ['$stateParams', function($stateParams) {
+        return $stateParams.someId;   // that will exist everywhere
+    }]
+}
+</script>
+    <p>$cookies - this's just a service that provides read/write (get/put(!)) access (methods) to browser's cookies.</p>
+    <p>$parse - the docs are telling me that it converts AngularJS expressions into a function, but at this moment I'm still a bit confused about that explanation. Will c.</p>
+    <p>$http - well, here we go without any surprises, it's just a func which takes an object that is used to generate an HTTP req and returns a promise.</p>
+    <p></p>
+</div>

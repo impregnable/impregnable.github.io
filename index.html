@@ -1,69 +1,71 @@
 <html ng-app='myPrivateBlog' lang='en'>
 <head>
-  <title>myPrivateBlog</title>
-  <meta charset='utf-8'>
-  <link rel='stylesheet' href='css/style.css'>
-  <link href='https://fonts.googleapis.com/css?family=Italianno' rel='stylesheet'>
-  <link rel="stylesheet" href="css/ocean.css">
-  <script src='bower_components/jquery/dist/jquery.min.js'></script>
-  <script src='bower_components/angular/angular.min.js'></script>
-  <script src='bower_components/angular-sanitize/angular-sanitize.js'></script>
-  <script src='bower_components/showdown/src/showdown.js'></script>
-  <script src='bower_components/angular-markdown-directive/markdown.js'></script>
-  <script src='bower_components/angular-ui-router/release/angular-ui-router.min.js'></script>
-  <script src='js/app.js'></script>
-  <script src='js/services.js'></script>
-  <script src='js/controllers.js'></script>
-  <script src='js/directives.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js'></script>
-  <script src='https://pc035860.github.io/angular-highlightjs/angular-highlightjs.js'></script>
+    <title>myPrivateBlog</title>
+    <meta charset='utf-8'>
+    <link rel='stylesheet' href='css/style.css'>
+    <link href='https://fonts.googleapis.com/css?family=Italianno' rel='stylesheet'>
+    <link rel="stylesheet" href="css/ocean.css">
+    <script src='bower_components/jquery/dist/jquery.min.js'></script>
+    <script src='bower_components/angular/angular.min.js'></script>
+    <script src='bower_components/angular-sanitize/angular-sanitize.js'></script>
+    <script src='bower_components/showdown/src/showdown.js'></script>
+    <script src='bower_components/angular-markdown-directive/markdown.js'></script>
+    <script src='bower_components/angular-ui-router/release/angular-ui-router.min.js'></script>
+    <script src='js/app.js'></script>
+    <script src='js/services.js'></script>
+    <script src='js/controllers.js'></script>
+    <script src='js/directives.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js'></script>
+    <script src='https://pc035860.github.io/angular-highlightjs/angular-highlightjs.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
 </head>
 <body class='main-wrapper'>
-  <!-- of course soon I'm gonna encapsulate header, content, nav and footer as well -->
-  <header class='main-wrapper__header'>
+<!-- of course soon I'm gonna encapsulate header, content, nav and footer as well -->
+<header class='main-wrapper__header'>
     <div class='header'>
-      <div class='header__title'>
-        <div class='header__label' ui-sref='home' style='cursor:pointer'>impregnablefiend</div>
-        <div class='header__greeting' ng-click='playResponse()'>Good news travels slowly, bad news has wings.
-            <audio ng-src='{{heroResponse}}' id='header-greeting__player'></audio>
+        <div class='header__title'>
+            <div class='header__label' ui-sref='home' style='cursor:pointer'>impregnablefiend</div>
+            <div class='header__greeting' ng-click='playResponse()'>Good news travels slowly, bad news has wings.
+                <audio ng-src='{{heroResponse}}' id='header-greeting__player'></audio>
+            </div>
+            <!--<button ng-click="$storage.counter = $storage.counter + 1">{{$storage.counter}}</button>-->
         </div>
-        <!--<button ng-click="$storage.counter = $storage.counter + 1">{{$storage.counter}}</button>-->
-      </div>
-      <div class='header__search'>
-        <input class='search__field'>
-        <img src='img/search.svg' class='search__image'>
-      </div>
+        <div class='header__search'>
+            <input class='search__field'>
+            <img src='img/search.svg' class='search__image'>
+        </div>
     </div>
-  </header>
-  <main class='main-wrapper__content'>
+</header>
+<main class='main-wrapper__content'>
     <article class='content__article'>
-      <div ui-view='content'></div>
+        <div ui-view='content'></div>
     </article>
     <nav class='content__navbar'>
-      <ul class='navbar-list'>
-        <li class='navbar-list__item'>
-          <a ui-sref='home' ng-class="{active: $state.includes('home')}" class='navbar-list__link'>home</a>
-        </li>
-        <li class='navbar-list__item'>
-          <a ui-sref='smartStuff' ng-class="{active: $state.includes('smartStuff')}" class='navbar-list__link'>smart stuff</a>
-        </li>
-        <li class='navbar-list__item'>
-          <a ui-sref='hilariousStuff' ng-class="{active: $state.includes('hilariousStuff')}" class='navbar-list__link'>hilarious stuff</a>
-        </li>
-        <li class='navbar-list__item'>
-          <a ui-sref='infoPage' ng-class="{active: $state.includes('infoPage')}" class='navbar-list__link'>temporary info page</a>
-        </li>
-        <li class='navbar-list__item'><a href='' class='navbar-list__link'>some other stuff</a></li>
-        <li class='navbar-list__item'><a href='' class='navbar-list__link'>about me page, yeah :D</a></li>
-      </ul>
+        <ul class='navbar-list'>
+            <li class='navbar-list__item'>
+                <a ui-sref='home' ng-class="{active: $state.includes('home')}" class='navbar-list__link'>home</a>
+            </li>
+            <!--<li class='navbar-list__item'>-->
+            <!--<a ui-sref='smartStuff' ng-class="{active: $state.includes('smartStuff')}" class='navbar-list__link'>smart stuff</a>-->
+            <!--</li>-->
+            <li class='navbar-list__item'>
+                <a ui-sref='hilariousStuff' ng-class="{active: $state.includes('hilariousStuff')}" class='navbar-list__link'>hilarious stuff</a>
+            </li>
+            <li class='navbar-list__item'>
+                <a ui-sref='infoPage' ng-class="{active: $state.includes('infoPage')}" class='navbar-list__link'>temporary info page</a>
+            </li>
+            <li class='navbar-list__item'>
+                <a ui-sref='secondInfoPage' ng-class="{active: $state.includes('secondInfoPage')}" class='navbar-list__link'>one more info page (;</a>
+            </li>
+            <!--<li class='navbar-list__item'><a href='' class='navbar-list__link'>about me page, yeah :D</a></li>-->
+        </ul>
     </nav>
-  </main>
-  <footer class='main-wrapper__footer'>
+</main>
+<footer class='main-wrapper__footer'>
     <div class='footer'>
-      <div class='footer-someStuff'>some stuff here, e.g. my vk/git/mail/whatever </div>
-      <div class='footer-anotherStuff'>another fascinating stuff, like... dunno right now, but I'll invent something :D</div>
+        <div class='footer-someStuff'>some stuff here, e.g. my vk/git/mail/whatever </div>
+        <div class='footer-anotherStuff'>another fascinating stuff, like... dunno right now, but I'll invent something :D</div>
     </div>
-  </footer>
+</footer>
 </body>
 </html>

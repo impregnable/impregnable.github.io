@@ -55,6 +55,14 @@ blog.config(function($stateProvider, $urlRouterProvider) {
                     templateUrl: 'html/infoPage.html'
                 }
             }
+        })
+        .state('secondInfoPage', {
+            url: '/oneMoreInfoPage',
+            views: {
+                'content': {
+                    templateUrl: 'html/secondInfoPage.html'
+                }
+            }
         });
 })
     .run(function($rootScope, $state, $interval, phrasesFactory, $localStorage) {
