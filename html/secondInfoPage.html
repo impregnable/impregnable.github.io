@@ -30,5 +30,48 @@ resolve: {
     <p>$cookies - this's just a service that provides read/write (get/put(!)) access (methods) to browser's cookies.</p>
     <p>$parse - the docs are telling me that it converts AngularJS expressions into a function, but at this moment I'm still a bit confused about that explanation. Will c.</p>
     <p>$http - well, here we go without any surprises, it's just a func which takes an object that is used to generate an HTTP req and returns a promise.</p>
-    <p></p>
+    <p>- - - - -</p>
+    <p>It's <span class='article__link'>December the nineteenth, 2017</span> and I'm here :) Well, talking about legacy AngularJS is not entertaining and I'm gonna jump right into...</p>
+</div>
+<div class='article__subtitle'>Angular</div>
+<div class='article__prelude'>
+    <p class='article__quote'>First of all, I decided to make a list that contains some significant features, or whatever you call it, in Angular.
+        <br>Stuff I've learned in that last 5 months.
+        <br><span ng-click='showDetails =! showDetails' class='article__link'>(click here to get a bit more detailed info about what's coming)</span></p>
+    <ul>
+        <li>Observable versus Promise
+            <ul ng-if='showDetails' class='animationIf'>
+                <li style='transition: color 2s ease-in'>... including stuff about subscribe and so on.</li>
+            </ul>
+        </li>
+        <li>Resolvers
+            <ul ng-if='showDetails' class='animationIf'>
+                <li>... and all about ActivatedRoute as well.</li>
+            </ul></li>
+        <li>Interfaces
+            <ul ng-if='showDetails' class='animationIf'>
+                <li>... and about types, private, protected, and public modifiers.</li>
+            </ul>
+        </li>
+        <li>Dependency Injection
+            <ul ng-if='showDetails' class='animationIf'>
+                <li>... stuff about @Injectable and static methods as well.</li>
+            </ul>
+        </li>
+        <li>@ViewChild or @Output
+            <ul ng-if='showDetails' class='animationIf'>
+                <li>... how to get child in parent.</li>
+            </ul>
+        </li>
+        <li>@Input
+            <ul ng-if='showDetails' class='animationIf'>
+                <li>... and how to get parent in child.</li>
+            </ul>
+        </li>
+        <li>Shared services
+            <ul ng-if='showDetails' class='animationIf'>
+                <li>... and of course how to deal with unrelated components.</li>
+            </ul>
+        </li>
+    </ul>
 </div>

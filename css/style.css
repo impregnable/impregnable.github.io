@@ -212,6 +212,32 @@
 .article__prelude {
     margin: .25em 0 .75em;
 }
+.article__quote {
+    background-color: #fafafa;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.animationIf {
+    list-style-type: none;
+    margin: 0;
+    padding: 0.5em;
+}
+.animationIf.ng-enter,
+.animationIf.ng-leave {
+    -webkit-transition: opacity ease-in-out 1s;
+    -moz-transition: opacity ease-in-out 1s;
+    -o-transition: opacity ease-in-out 1s;
+    transition: opacity ease-in-out 1s;
+}
+.animationIf.ng-enter,
+.animationIf.ng-leave.ng-leave-active {
+    opacity: 0;
+}
+.animationIf.ng-leave,
+.animationIf.ng-enter.ng-enter-active {
+    opacity: 1;
+}
 @media all and (min-width: 768px) {
   .header {
     padding: 1.5em;

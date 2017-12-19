@@ -49,3 +49,6 @@ postsControllers.controller('HilariousStuffDetailController', function($scope) {
         isPlaying = false;
     };
 });
+postsControllers.controller('SecondInfoPageController', function($scope) {
+    $scope.showDetails = false;
+});

@@ -1,5 +1,5 @@
 var blog = angular.module('myPrivateBlog',
-    ['ui.router', 'postsControllers','postsServices', 'btford.markdown', 'postsDirectives', 'hljs', 'ngStorage']);
+    ['ui.router', 'postsControllers','postsServices', 'btford.markdown', 'postsDirectives', 'hljs', 'ngStorage', 'ngAnimate']);
 
 blog.config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/home');
@@ -60,7 +60,8 @@ blog.config(function($stateProvider, $urlRouterProvider) {
             url: '/oneMoreInfoPage',
             views: {
                 'content': {
-                    templateUrl: 'html/secondInfoPage.html'
+                    templateUrl: 'html/secondInfoPage.html',
+                    controller: 'SecondInfoPageController'
                 }
             }
         });
